@@ -1,0 +1,26 @@
+- criação do contrato, estendendo o ERC721
+
+- script de deploy para dar deploy no contrato
+
+- criar .env com a api do infura, privateKey da sua metamask, e key do etherscan
+
+- configurar o hardhat-config com as enviroment variables acima
+
+- a partir disso, o contrato está pronto para ser deployado
+yarn hardhat run scripts/deployContract.ts --network rinkeby
+
+-depois de deployed, instalar plugin etherscan para conseguir acessar os metodos do contrato na etherscan 
+yarn add -D @nomiclabs/hardhat-etherscan
+
+-criar json com a abi do contrato (importar o json), e também uma variavel com o address do contrato na page/component que será utilizado
+
+- const provider = new ethers.providers.Web3provider(window.ethereum) provê uma forma do ethers conectar na blockchain
+
+- signer = provider.getSigner() é uma abstração de uma conta ethereum, que vai poder ser utilizada para transações
+
+- para instanciar o contrato new ethers.Contract(contractAddress, contract.abi, signer)
+
+- criar operação de mint a partir das especificações necessárarias
+
+Hardhat - ambiente de desenvolvimento Ethereum, oferecendo deploy e teste de smart contracts
+Infura - ethereum blockchain node provider
